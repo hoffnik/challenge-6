@@ -6,7 +6,7 @@ $(document).ready(function () {
     citiesObj = JSON.parse(cities);
     if(!$.isEmptyObject(citiesObj)) {
     searchedCity = citiesObj[0];
-    getWeatherByCity(searchedCity);
+    cityWeather(searchedCity);
     $.each( citiesObj, function( key, value ) {
       $("#city-list").append(
         `<li class="list-group-item text-center city-list btn" id="${value}">${value}</li>`
@@ -16,7 +16,7 @@ $(document).ready(function () {
   
     $('.city-list').click(function() {
       searchedCity = $(this).attr('id');
-      getWeatherByCity(searchedCity);
+      cityWeather(searchedCity);
     });
     $('.btn-clear').click(function() {
       $("#city-list").empty();
@@ -29,23 +29,21 @@ $(document).ready(function () {
   
     $("#btn-citySearch").click(function () {
       searchedCity = $("#citySearch-inp").val().trim();
-      getWeatherByCity(searchedCity);
+      cityWeather(searchedCity);
       $("#citySearch-inp").val("")
       event.preventDefault();
     });
-    function getWeatherByCity(searchedCity) {
-        lat = '';
-        lon = '';
+    function cityWeather(searchedCity) {
+        latitude = '';
+        longitude = '';
         const todayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}`;
         $.ajax({
           url: todayUrl,
           dataType: "json",
           success: function(response) {
-          // console.log(data);
-          // we dont used it anywhere in code
-           lat = response.coord.lat;
-           lon = response.coord.lon;
-          // console.log(response.);
+            latitude = response.coord.lat;
+            longitude = response.coord.lon;
+
             const cityName = response.name + ` : ` + response.sys.country;
             const tempF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed();
             const humidity = response.main.humidity;
@@ -74,7 +72,7 @@ $(document).ready(function () {
             $("#temperature").text("temperature:  " + tempF + "  °F");
             $("#humidity").text("humidity:  " + humidity + "  %");
             $("#windspeed").text("windspeed:  " + windSpeed + "  MPH");
-            let uvUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+            let uvUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&latitude=${latitude}&longitude=${longitude}`;
             $.ajax({
               url: uvUrl,
               dataType: "json",
@@ -100,7 +98,7 @@ $(document).ready(function () {
                 alert(result.message);
               },
             });
-            let fiveUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${apiKey}`;
+            let fiveUrl = `https://api.openweathermap.org/data/2.5/onecall?latitude=${latitude}&longitude=${longitude}&exclude=current,minutely,hourly&appid=${apiKey}`;
             $.ajax({
               url: fiveUrl,
               dataType: "json",
