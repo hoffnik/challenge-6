@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Weather Dashboard</a>
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="City"
+            aria-label="Search"
+            id="citySearch-inp"
+          />
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            id="btn-citySearch"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col" id="city-column">
+          <div class="card">
+            <div class="card-header text-center">Search History</div>
+            <ul class="list-group list-group-flush" id="city-list"></ul>
+            <button class="btn-clear">Clear</button>
+          </div>
+        </div>
+        <div class="col-8 invisible" id="current-city">
+          <div class="jumbotron">
+            <h1 class="display-3" >TODAY</h1>
+            <!-- I added this tag-->
+            <h2 id="currentCity" ></h2>
+            <h3 class="display-6" id="current-date"></h3>
+            <hr class="m-4" />
+            <!-- I added this properties-->
+            <img id="img" class="img-thumbnail" style="background-color: #b0b0b0;"/>
+            <p class="lead" id="temperature"></p>
+            <p class="lead" id="humidity"></p>
+            <p class="lead" id="windspeed"></p>
+            <p class="lead" id="uv"></p>
+
+          </div>
+          <div id="days">
+            <div class="row">
+              <div class="col-sm each-day"></div>
+              <div class="col-sm each-day"></div>
+              <div class="col-sm each-day"></div>
+              <div class="col-sm each-day"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/84f732b584.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
