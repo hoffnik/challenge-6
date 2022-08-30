@@ -1,0 +1,35 @@
+#uv {
+    font-weight: bold;
+}
+.green {
+    color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+.purple {
+    background-color: purple;   
+}
+#days {
+    background-color: #B0B0B0 ;
+}
+#current-city {
+    background-color: #B0B0B0 ;
+    margin: 1em;
+    padding: 1em;
+}#city-column {
+    margin: 1em;
+    padding: 1em;
+}
+#city-list {
+    text-align: center; 
+}
