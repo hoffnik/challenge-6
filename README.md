@@ -6,7 +6,7 @@ A weather dashboard that runs in the browser and features dynamically updated HT
 <br>
 
 *Link to the Weather Dashboard* <br>
-[Weather Dashboard](https://)
+[Weather Dashboard]([https://](https://hoffnik.github.io/challenge-6/))
 <br>
 <br>
 ### Screenshot
