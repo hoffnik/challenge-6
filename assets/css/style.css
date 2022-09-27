@@ -1,35 +1,176 @@
-#uv {
-    font-weight: bold;
-}
-.green {
-    color: green;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.orange {
-    background-color: orange;
-}
-
-.red {
-    background-color: red;
-}
-.purple {
-    background-color: purple;   
-}
-#days {
-    background-color: #B0B0B0 ;
-}
-#current-city {
-    background-color: #B0B0B0 ;
-    margin: 1em;
-    padding: 1em;
-}#city-column {
-    margin: 1em;
-    padding: 1em;
-}
-#city-list {
-    text-align: center; 
-}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+  }
+  
+  :root {
+    --header-bg-color: #747e88;
+    --header-txt-color: #ffffff;
+    --main-txt-color: #000000;
+    --search-history-bg-color: #ffffff;
+    --search-history-txt-color: #495057;
+    --forecast-list-color: #ffffff;
+    --search-section-bg-color: #f8f9fa;
+    --main-border-color: #dfdfdf;
+    --search-btn-bg-color: #22cc85;
+    --search-btn-border-color: #22ba00;
+    --forecast-cards-border-color: #000000;
+    --forecast-cards-bg-color: #6b10d3;
+    --error-message-txt-color: #ff0000;
+  }
+  
+  header h1 {
+    padding: 15px;
+    background-color: var(--header-bg-color);
+    color: var(--header-txt-color);
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  
+  #search-bar-title,
+  #city-section h2,
+  #forecast-section h3,
+  .weather-list-item {
+    color: var(--main-txt-color);
+  }
+  
+  #search-history li {
+    color: var(--search-history-txt-color);
+  }
+  
+  #forecast-cards-list {
+    color: var(--forecast-list-color);
+  }
+  
+  #search-section {
+    margin-right: 20px;
+    padding: 10px 15px 0px 10px;
+    background-color: var(--search-section-bg-color);
+  }
+  
+  #search-bar-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #search-input {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 20px;
+    border: 1px solid var(--main-border-color);
+    border-radius: 5px;
+    vertical-align: middle;
+  }
+  
+  #search-btn {
+    height: 46px;
+    width: 46px;
+    background-color: var(--search-btn-bg-color);
+    border: 3px solid var(--search-btn-border-color);
+    border-radius: 6px;
+    vertical-align: middle;
+  }
+  
+  .fa-search {
+    color: white;
+  }
+  
+  #search-error-message {
+    margin-top: 10px;
+    color: var(--error-message-txt-color);
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  #search-history {
+    margin: 15px 0;
+    list-style: none;
+  }
+  
+  #search-history li {
+    padding: 15px;
+    border: 1px solid var(--main-border-color);
+    border-radius: 2px;
+    background-color: var(--search-history-bg-color);
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+  
+  .right-column {
+    display: none;
+  }
+  
+  #city-section {
+    margin-top: 15px;
+    border: 1px solid var(--main-border-color);
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  #city-section h2 {
+    display: inline;
+    font-size: 28px;
+    vertical-align: middle;
+  }
+  
+  #current-weather-icon {
+    vertical-align: middle;
+  }
+  
+  #weather-list {
+    padding: 10px 0;
+  }
+  
+  .weather-list-item {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  
+  #current-uv-index-value {
+    padding: 7px;
+    border-radius: 3px;
+  }
+  
+  #forecast-title {
+    margin: 20px 0 5px 0;
+    font-size: 24px;
+  }
+  
+  #forecast-cards-list {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-items: start;
+  }
+  
+  #forecast-cards-list li {
+    list-style: none;
+    padding: 10px;
+    width: auto;
+    background-color: var(--forecast-cards-bg-color);
+    border: 1px solid var(--forecast-card-border-color);
+    border-radius: 5px;
+  }
+  
+  #forecast-cards-list li h4 {
+    font-size: 20px;
+  }
+  
+  #forecast-cards-list li img {
+    display: block;
+    padding-top: 10px;
+  }
+  
+  .forecast-temp {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
