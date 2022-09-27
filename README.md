@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-## Requirements/Description
+## Description
 ### Description
 A weather dashboard that runs in the browser and features dynamically updated HTML and CSS using third party API's.
 <br>
